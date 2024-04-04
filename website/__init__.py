@@ -28,7 +28,7 @@ def create_app():
     create_database(app)
     
     # Import your User model (adjust the import path as needed)
-    from .models import User, Comment, Post
+    from .models import User, Comment, Post, Like
 
     # Create the database tables within the application context
     with app.app_context():
