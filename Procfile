@@ -1,1 +1,1 @@
-web: python create_database.py && gunicorn app:app
+web: gunicorn 'website:create_app'
