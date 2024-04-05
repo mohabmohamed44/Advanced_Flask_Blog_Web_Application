@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
 from . import db
+from functools import wraps
 
 views = Blueprint("views", __name__)
 
@@ -47,6 +48,35 @@ def delete_post(id):
         flash('Post deleted.', category='success')
 
     return redirect(url_for('views.home'))
+
+@views.route("/edit-post/<id>", methods=['GET', 'POST'])
+@login_required
+def edit_post(id):
+    post = Post.query.filter_by(id=id).first()
+
+    if not post:
+        flash("Post does not exist.", category='error')
+        return redirect(url_for('views.home'))
+
+    if current_user.id != post.author:
+        flash('You do not have permission to edit this post.', category='error')
+        return redirect(url_for('views.home'))
+
+    if request.method == "POST":
+        text = request.form.get('text')
+
+        if not text:
+            flash('Post cannot be empty', category='error')
+        else:
+            post.text = text
+            db.session.commit()
+            flash('Post updated!', category='success')
+            return redirect(url_for('views.home'))
+
+    return render_template('edit_post.html', user=current_user, post=post)
+
+
+
 
 
 @views.route("/posts/<username>")
