@@ -1,6 +1,6 @@
 # Blog Post Web App
 
-This is a simple blog post web application built with Flask and SQLAlchemy.
+This is a Advanced blog post web application built with Flask and SQLAlchemy with user authentication and authorization
 
 ## Getting Started
 
@@ -41,7 +41,16 @@ The application has routes defined for creating and viewing blog posts.
 - `@views.route('/home')`
     - This route is used to display the home page. It fetches all the blog posts from the database and renders them on the home page.
 
-Please note that the routes for creating and viewing blog posts require login. If a user who is not logged in tries to access these routes, they will be redirected to the login page with a flash message.
+- `@views.route("/create-post", methods=['GET', 'POST'])`
+    - This route is used for creating a new post. If the method is POST, it checks if the text is not empty and then creates a new post.
+
+- `@views.route("/delete-post/<id>")`
+    - This route is used for deleting a post. It checks if the post exists and if the current user is the author of the post before deleting it.
+
+- `@views.route("/edit-post/<id>", methods=['GET', 'POST'])`
+    - This route is used for editing a post. It checks if the post exists and if the current user is the author of the post before allowing the post to be edited.
+
+Please note that the routes for creating, editing, and deleting blog posts require login. If a user who is not logged in tries to access these routes, they will be redirected to the login page with a flash message.
 
 ## Built With
 
