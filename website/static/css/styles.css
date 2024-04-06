@@ -6,20 +6,25 @@
 }
 
 i {
-    color: blue;
+    color: black;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.far  {
+.fa-thumps-up  {
     margin-right: 10px;
-}
+} 
 
-.fas{
+.fa-thumps-up{
     margin-right: 10px;
+} 
+
+
+
+.btn-outline-secondary {
+    border-color: #ced4da;
 }
-
-
-
-
 

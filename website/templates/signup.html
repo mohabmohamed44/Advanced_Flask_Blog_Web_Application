@@ -20,21 +20,43 @@ content %}
       placeholder="Enter Username"
     />
     <label for="password1">Password</label>
-    <input
-      type="password"
-      id="password1"
-      name="password1"
-      class="form-control"
-      placeholder="Enter Password"
-    />
+    <div class="input-group">
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        class="form-control"
+        placeholder="Enter Password"
+      />
+      <div class="input-group-append">
+        <button
+          id="togglePassword1"
+          class="btn btn-outline-secondary"
+          type="button"
+        >
+          <i id="eyeIcon1" class="fas fa-eye-slash"></i>
+        </button>
+      </div>
+    </div>
     <label for="password2">Password Again</label>
-    <input
-      type="password"
-      id="password2"
-      name="password2"
-      class="form-control"
-      placeholder="Enter Password Again"
-    />
+    <div class="input-group">
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        class="form-control"
+        placeholder="Enter Password Again"
+      />
+      <div class="input-group-append">
+        <button
+          id="togglePassword2"
+          class="btn btn-outline-secondary"
+          type="button"
+        >
+          <i id="eyeIcon2" class="fas fa-eye-slash"></i>
+        </button>
+      </div>
+    </div>
     <br />
     <div align="center">
       <button class="btn btn-primary" type="submit">Sign Up</button>
