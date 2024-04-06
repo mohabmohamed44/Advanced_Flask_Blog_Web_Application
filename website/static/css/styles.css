@@ -14,17 +14,14 @@ i {
 }
 
 
-.fa-thumps-up  {
-    margin-right: 10px;
-} 
-
-.fa-thumps-up{
-    margin-right: 10px;
-} 
-
-
-
+.user_name_post {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+ 
 .btn-outline-secondary {
     border-color: #ced4da;
+    margin-right: 15px;
 }
 

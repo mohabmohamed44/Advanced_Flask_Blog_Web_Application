@@ -5,15 +5,15 @@
   {% for post in posts %}
   <div class="card border-dark">
     <div class="card-header d-flex justify-content-between align-items-center">
-      <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
-      <div>
+      <a class="user_name_post" href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+      <div class="like-btn">
         <span id="likes-count-{{post.id}}"> {{ post.likes|length }}</span>
         {% if user.id in post.likes|map(attribute="author")|list %}
         <script type="text/javascript">
           var postId = "{{post.id}}";
         </script>
         <i
-          class="fas fa-thumbs-up"
+          class="fas fa-thumbs-up like_btn"
           id="like-button-{{post.id}}"
           onclick="like(postId)" 
         ></i>
