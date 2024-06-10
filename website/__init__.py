@@ -25,15 +25,15 @@ def create_app():
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
     
-    create_database(app)
-    
     # Import your User model (adjust the import path as needed)
     from .models import User, Comment, Post, Like
 
     # Create the database tables within the application context
     with app.app_context():
-        db.create_all()
-
+        if not path.exists(f"website/{DB_NAME}"):
+            db.create_all()
+            print("Creating database!")
+    
     # Initialize the login manager
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
@@ -44,12 +44,6 @@ def create_app():
         return User.query.get(int(id))
 
     return app
-
-def create_database(app):
-    if not path.exists("website/"+DB_NAME):
-        with app.app_context():
-            db.create_all()
-        print("Creating database!")
 
 # Call create_app and assign the result to app
 app = create_app()
