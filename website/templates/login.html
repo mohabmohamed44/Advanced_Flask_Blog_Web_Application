@@ -1,22 +1,37 @@
-{% extends "base.html" %}
-{% block title %}Login{% endblock %}
-{% block content %}
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
 <form method="POST">
-    <h3 align="center">Login</h3>
-    <div class="form-floating mb-3">
-        <input type="text" id="email" name="email" class="form-control" placeholder="name@example.com" />
-        <label for="email">Email Address</label>
-    </div>
-    <div class="form-floating mb-3 position-relative">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
-        <label for="password">Password</label>
-        <button id="togglePassword" class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y" type="button">
-            <i id="eyeIcon" class="fas fa-eye-slash"></i>
-        </button>
-    </div>
-    <br />
-    <div align="center">
-        <button class="btn btn-primary" type="submit">Login</button>
-    </div>
+  <h3 align="center">Login</h3>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="name@example.com"
+    />
+    <label for="email">Email Address</label>
+  </div>
+  <div class="form-floating mb-3 position-relative">
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      placeholder="Password"
+    />
+    <label for="password">Password</label>
+    <button
+      id="togglePassword"
+      class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y"
+      type="button"
+    >
+      <i id="eyeIcon" class="fas fa-eye-slash"></i>
+    </button>
+  </div>
+  <br />
+  <div align="center">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
 </form>
 {% endblock %}
