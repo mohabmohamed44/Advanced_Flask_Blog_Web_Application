@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
 %}
-<form method="POST">
-  <h3 align="center">Login</h3>
+<form method="POST" class="text-center mt-4 mx-auto">
+  <h3>Login</h3>
   <div class="form-floating mb-3">
     <input
       type="text"
@@ -30,8 +30,8 @@
     </button>
   </div>
   <br />
-  <div align="center">
-    <button class="btn btn-primary" type="submit">Login</button>
+  <div class="d-flex justify-content-center align-items-center">
+    <button class="btn btn-primary fs-5" type="submit">Login</button>
   </div>
 </form>
 {% endblock %}
